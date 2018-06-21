@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import Level from './components/Level';
+import Class from './components/Class';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       currentLevel: 10,
-      isNameLevel: false
+      isNameLevel: false,
+      baseClass: 'Fighter'
     };
   }
 
@@ -18,8 +20,12 @@ class App extends Component {
     this.setState({ isNameLevel: e.target.checked });
   };
 
+  handleClassChange = e => {
+    this.setState({ baseClass: e.target.value });
+  };
+
   render() {
-    const { currentLevel, isNameLevel } = this.state;
+    const { currentLevel, isNameLevel, baseClass } = this.state;
 
     return (
       <div>
@@ -29,6 +35,9 @@ class App extends Component {
           isName={isNameLevel}
           onIsNameChange={this.handleIsNameLevelChange}
         />
+        {this.state.isNameLevel && (
+          <Class value={baseClass} onChange={this.handleClassChange} />
+        )}
       </div>
     );
   }

@@ -8,7 +8,7 @@ const Level = ({ value, onChange, isName, onIsNameChange }) => (
     </label>
     <br />
     <label>
-      Is name level?{' '}
+      Is name level?
       <input type="checkbox" checked={isName} onChange={onIsNameChange} />
     </label>
   </div>
