@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Level from './components/Level';
 import Class from './components/Class';
+import calculator from './calculator';
 
 class App extends Component {
   constructor() {
@@ -38,6 +39,8 @@ class App extends Component {
         {this.state.isNameLevel && (
           <Class value={baseClass} onChange={this.handleClassChange} />
         )}
+        <hr />
+        Cost per week: {calculator(this.state).costPerWeek}
       </div>
     );
   }
