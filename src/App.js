@@ -40,7 +40,10 @@ class App extends Component {
           <Class value={baseClass} onChange={this.handleClassChange} />
         )}
         <hr />
-        <p>Cost per week: {calculator(this.state).costPerWeek}</p>
+        <p>
+          Cost per week: {calculator(this.state).costPerWeek.toLocaleString()}{' '}
+          g.p.
+        </p>
         <p>
           Weeks:
           {isNameLevel
