@@ -40,7 +40,16 @@ class App extends Component {
           <Class value={baseClass} onChange={this.handleClassChange} />
         )}
         <hr />
-        Cost per week: {calculator(this.state).costPerWeek}
+        <p>Cost per week: {calculator(this.state).costPerWeek}</p>
+        <p>
+          Weeks:
+          {isNameLevel
+            ? ' 1'
+            : ' 1 if higher-level tutor of same class, 2 if self-trained'}
+        </p>
+        <p>
+          <small>(Assumes excellent performance)</small>
+        </p>
       </div>
     );
   }
