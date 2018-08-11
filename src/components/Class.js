@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { costByClass } from '../constants';
+import { costByClassForNameLevel } from '../constants';
 
-const options = Object.keys(costByClass).map(x => <option key={x}>{x}</option>);
+const options = Object.keys(costByClassForNameLevel).map(x => (
+  <option key={x}>{x}</option>
+));
 
 const Class = ({ value, onChange }) => (
   <label>
