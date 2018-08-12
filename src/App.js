@@ -18,7 +18,7 @@ class App extends Component {
   handleLevelChange = e => {
     let level = Number(e.target.value);
 
-    if (level > 0) {
+    if (level > 0 && Number.isInteger(level)) {
       this.setState({ currentLevel: level });
     }
   };
