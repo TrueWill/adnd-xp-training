@@ -1,7 +1,7 @@
 import { costByClassForNameLevel, costForBelowNameLevel } from './constants';
 
 const calculator = state => {
-  const { currentLevel, isNameLevel, baseClass } = state;
+  const { currentLevel, isNameLevel, baseClass, hasTutor } = state;
 
   const costPerLevelPerWeek = isNameLevel
     ? costByClassForNameLevel[baseClass]
@@ -9,8 +9,14 @@ const calculator = state => {
 
   const costPerWeek = currentLevel * costPerLevelPerWeek;
 
+  const weeks = isNameLevel || hasTutor ? 1 : 2;
+
+  const totalCost = costPerWeek * weeks;
+
   return {
-    costPerWeek
+    costPerWeek,
+    weeks,
+    totalCost
   };
 };
 

@@ -34,6 +34,8 @@ class App extends Component {
   render() {
     const { currentLevel, isNameLevel, baseClass, hasTutor } = this.state;
 
+    const calculated = calculator(this.state);
+
     return (
       <div>
         <Level
@@ -52,16 +54,9 @@ class App extends Component {
           />
         )}
         <hr />
-        <p>
-          Cost per week: {calculator(this.state).costPerWeek.toLocaleString()}{' '}
-          g.p.
-        </p>
-        <p>
-          Weeks:
-          {isNameLevel
-            ? ' 1'
-            : ' 1 if higher-level tutor of same class, 2 if self-trained'}
-        </p>
+        <p>Cost per week: {calculated.costPerWeek.toLocaleString()} g.p.</p>
+        <p>Weeks: {calculated.weeks}</p>
+        <p>Total cost: {calculated.totalCost.toLocaleString()} g.p.</p>
         <p>
           <small>(Assumes excellent performance)</small>
         </p>
