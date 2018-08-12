@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Level from './components/Level';
 import Class from './components/Class';
+import Tutor from './components/Tutor';
 import calculator from './calculator';
 
 class App extends Component {
@@ -9,7 +10,8 @@ class App extends Component {
     this.state = {
       currentLevel: 10,
       isNameLevel: false,
-      baseClass: 'Fighter'
+      baseClass: 'Fighter',
+      hasTutor: true
     };
   }
 
@@ -25,8 +27,12 @@ class App extends Component {
     this.setState({ baseClass: e.target.value });
   };
 
+  handleHasTutorChange = e => {
+    this.setState({ hasTutor: e.target.checked });
+  };
+
   render() {
-    const { currentLevel, isNameLevel, baseClass } = this.state;
+    const { currentLevel, isNameLevel, baseClass, hasTutor } = this.state;
 
     return (
       <div>
@@ -36,8 +42,14 @@ class App extends Component {
           isName={isNameLevel}
           onIsNameChange={this.handleIsNameLevelChange}
         />
-        {this.state.isNameLevel && (
+        {isNameLevel && (
           <Class value={baseClass} onChange={this.handleClassChange} />
+        )}
+        {!isNameLevel && (
+          <Tutor
+            hasTutor={hasTutor}
+            onHasTutorChange={this.handleHasTutorChange}
+          />
         )}
         <hr />
         <p>
