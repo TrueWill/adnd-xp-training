@@ -16,7 +16,11 @@ class App extends Component {
   }
 
   handleLevelChange = e => {
-    this.setState({ currentLevel: Number(e.target.value) });
+    let level = Number(e.target.value);
+
+    if (level > 0) {
+      this.setState({ currentLevel: level });
+    }
   };
 
   handleIsNameLevelChange = e => {
