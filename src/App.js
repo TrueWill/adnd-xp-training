@@ -38,6 +38,7 @@ class App extends Component {
 
     return (
       <div>
+        <h2>AD&D XP Training Calculator</h2>
         <Level
           value={currentLevel}
           onChange={this.handleLevelChange}
