@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
 
 // Polyfill for IE courtesy MDN
 Number.isInteger =
@@ -16,4 +15,3 @@ Number.isInteger =
   };
 
 ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
