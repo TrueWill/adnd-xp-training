@@ -9,7 +9,7 @@ This tool is unofficial, and the author is not affiliated with the companies men
 
 ## Live
 
-Deployed to https://truewill-adnd-xp-training.s3.us-east-2.amazonaws.com/
+Deployed to http://truewill-adnd-xp-training.s3-website.us-east-2.amazonaws.com/
 
 ## Acknowledgements
 
